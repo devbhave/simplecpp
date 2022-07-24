@@ -18,6 +18,7 @@ void TestCanvas::verifyCanvasConstruction(){
 
     QVERIFY2(c.title() == "SimpleCpp",  "Canvas window: Incorrect window title");
 
+    // REQ: System background colour should be canvas background colour
     auto screenPixels = c.screen()->grabWindow().toImage();
     auto actualBackgroundColour = screenPixels.pixelColor(400, 300);
     auto expectedBackgroundColour = QGuiApplication::palette().brush(QPalette::Window).color();
